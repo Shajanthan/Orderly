@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AppRoutes from "./routes/AppRoutes";
-import SplashScreen from "./components/common/SplashScreen";
+import SplashScreen from "./features/common/SplashScreen";
 
 const App: React.FC = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -8,6 +8,7 @@ const App: React.FC = () => {
     <>
       {" "}
       <>
+        {/* <AppRoutes /> */}
         {showSplash ? (
           <SplashScreen onFinish={() => setShowSplash(false)} />
         ) : (
