@@ -3,12 +3,15 @@ import bg from "../../assets/food_bg.jpg";
 import Button from "../../components/common/Button";
 import InputField from "../../components/common/InputField";
 import { FiLock, FiMail } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-100">
+    <div className="h-screen flex items-center justify-center bg-gray-100 p-2">
       {/* Card */}
-      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-2xl overflow-hidden w-full max-w-4xl m-2">
+      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-2xl overflow-hidden w-full max-w-4xl">
         {/* Left side - Image */}
         <div className="md:w-1/2">
           <img src={bg} alt="food" className="h-full w-full object-cover" />
@@ -48,7 +51,10 @@ const LoginPage: React.FC = () => {
 
           <p className="footer-text text-center mt-4">
             Don&apos;t have an account?{" "}
-            <span className="text-black font-semibold cursor-pointer">
+            <span
+              className="text-black font-semibold cursor-pointer"
+              onClick={() => navigate("/signup")}
+            >
               Sign Up
             </span>
           </p>
