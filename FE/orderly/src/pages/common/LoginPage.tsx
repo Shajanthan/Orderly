@@ -4,6 +4,7 @@ import Button from "../../components/common/Button";
 import InputField from "../../components/common/InputField";
 import { FiLock, FiMail } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -11,15 +12,15 @@ const LoginPage: React.FC = () => {
   return (
     <div className="h-screen flex items-center justify-center bg-gray-100 p-2">
       {/* Card */}
-      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-2xl overflow-hidden w-full max-w-4xl">
+      <div className="relative flex flex-col md:flex-row bg-white rounded-lg shadow-2xl overflow-hidden w-full max-w-4xl">
         {/* Left side - Image */}
         <div className="md:w-1/2">
           <img src={bg} alt="food" className="h-full w-full object-cover" />
         </div>
 
         {/* Right side - Login form */}
-        <div className="w-full md:w-1/2 p-5 md:p-10 flex flex-col justify-center">
-          <h1 className="heading-text text-center pb-3">Welcome Back!</h1>
+        <div className="w-full md:w-1/2 p-5 md:p-10 flex flex-col justify-center ">
+          <h1 className="heading-text text-center pb-3 pt-5">Welcome Back!</h1>
           <p className="subtitle-text text-center pb-6">
             Login to order your favorite meals quickly
           </p>
@@ -58,6 +59,15 @@ const LoginPage: React.FC = () => {
               Sign Up
             </span>
           </p>
+          <div className="absolute top-2 right-2">
+            <button
+              onClick={() => navigate("/")}
+              className="flex items-center text-black hover:text-gray-800 transition-colors duration-200 group"
+            >
+              <BsArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-200" />
+              Back to Orderly
+            </button>
+          </div>
         </div>
       </div>
     </div>

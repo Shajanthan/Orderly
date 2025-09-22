@@ -8,6 +8,7 @@ import Button from "../../components/common/Button";
 import { BiUser } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import bg from "../../assets/food_bg2.jpg";
+import { CiShop } from "react-icons/ci";
 
 const Signup: React.FC = () => {
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ const Signup: React.FC = () => {
               <div className="md:col-span-2">
                 {/* Back Button */}
                 <button
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/login")}
                   className="w-full mt-6 flex items-center justify-center text-gray-600 hover:text-gray-800 transition-colors duration-200 group"
                 >
                   <BsArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-200 " />
@@ -143,7 +144,7 @@ const Signup: React.FC = () => {
                         type="text"
                         label="Shop Name"
                         placeholder="Enter your shop name"
-                        icon={<FiUser className="w-5 h-5" />}
+                        icon={<CiShop className="w-5 h-5" />}
                         required
                       />
                     </>
@@ -184,7 +185,7 @@ const Signup: React.FC = () => {
                   Already have an account?{" "}
                   <span
                     className="text-black font-semibold cursor-pointer"
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/login")}
                   >
                     Login
                   </span>
